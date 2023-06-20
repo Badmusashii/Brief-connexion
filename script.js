@@ -6,7 +6,18 @@ let alertClass = document.getElementById("alert");
 var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
 button.addEventListener("click", (e) => {
-  if (!emailRegex.test(inputEmail.value)) {
+  if (!emailRegex.test(inputEmail.value) && inputPassword.value === "") {
+    inputEmail.classList.add("error");
+    inputEmail.value = "Adresse Email Invalide";
+    setTimeout(() => {
+      inputEmail.value = "";
+    }, 2000);
+    inputPassword.classList.add("error");
+    alertClass.textContent = "Mot de pass requis";
+    setTimeout(() => {
+      alertClass.textContent = "";
+    }, 1500);
+  } else if (!emailRegex.test(inputEmail.value)) {
     inputEmail.classList.add("error");
     inputEmail.value = "Adresse Email Invalide";
     setTimeout(() => {
@@ -14,7 +25,7 @@ button.addEventListener("click", (e) => {
     }, 2000);
   } else if (inputPassword.value === "") {
     inputPassword.classList.add("error");
-    alert.textContent = "Mot de pass requis";
+    alertClass.textContent = "Mot de pass requis";
     setTimeout(() => {
       alertClass.textContent = "";
     }, 1500);
