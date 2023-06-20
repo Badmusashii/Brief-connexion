@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: #F7F8F8;
+  background-color: #f7f8f8;
 }
 
 .card {
@@ -26,7 +26,6 @@ body {
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
-
 }
 
 .learn {
@@ -34,7 +33,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: black;
   font-weight: 600;
 }
@@ -49,14 +48,14 @@ body {
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 1px;
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
 }
 
 input {
   height: 3.5rem;
   border: none;
   border-radius: 10px;
-  background-color: #F3F4F5;
+  background-color: #f3f4f5;
   /* text-align: left; */
   padding-left: 2rem;
   font-size: 1.08rem;
@@ -67,7 +66,7 @@ input {
 button {
   height: 4rem;
   border-radius: 10px;
-  background-color: #7C48BF;
+  background-color: #7c48bf;
   color: white;
   font-size: 1.1rem;
   font-weight: 700;
@@ -93,4 +92,8 @@ button {
   position: relative;
   top: -0.4rem;
   padding-left: 0.2rem;
+}
+
+.error {
+  border: 2px solid red;
 }
