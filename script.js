@@ -26,9 +26,12 @@ button.addEventListener("click", (e) => {
   } else if (inputPassword.value === "") {
     inputPassword.classList.add("error");
     alertClass.textContent = "Mot de pass requis";
+    // setTimeout(() => {
+    //   alertClass.textContent = "";
+    // }, 1500);
     setTimeout(() => {
-      alertClass.textContent = "";
-    }, 1500);
+      inputEmail.value= "";
+    }, 3000);
   } else if (emailRegex.test(inputEmail.value) && inputPassword.value !== "") {
     alert("Connexion en cours !!!!");
   }
