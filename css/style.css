@@ -94,3 +94,7 @@ button {
   top: -0.4rem;
   padding-left: 0.2rem;
 }
+
+.error {
+  border: 5px salmon solid;
+}
