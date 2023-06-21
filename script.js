@@ -27,14 +27,14 @@ button.addEventListener("click", (e) => {
       inputEmail.classList.remove("error");
       alertEmail.classList.remove("email_alert_is_Visible");
       inputEmail.value = "";
-    }, 2000);
+    }, 2500);
   } else if (inputPassword.value === "") {
     inputPassword.classList.add("error");
     alertPassword.classList.add("password_alert_is_Visible");
     setTimeout(() => {
       inputPassword.classList.remove("error");
       alertPassword.classList.remove("password_alert_is_Visible");
-    }, 1500);
+    }, 2500);
   } else if (emailRegex.test(inputEmail.value) && inputPassword.value !== "") {
     alert("Connexion en cours !!!!");
   }
