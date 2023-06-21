@@ -1,27 +1,36 @@
 let inputEmail = document.getElementById("email");
 let inputPassword = document.getElementById("password");
-let submit = document.getElementById("button");
-let password = document.getElementById("fakepwd");
-let emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-console.log(password);
-console.log(inputPassword);
-console.log(inputEmail);
-submit.addEventListener("click", () => {
+let button = document.getElementById("button");
+let alertClass = document.getElementById("alert");
+
+var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+button.addEventListener("click", (e) => {
   if (!emailRegex.test(inputEmail.value) && inputPassword.value === "") {
     inputEmail.classList.add("error");
-    inputEmail.value = "Casse non respectée";
+    inputEmail.value = "Adresse Email Invalide";
+    setTimeout(() => {
+      inputEmail.value = "";
+    }, 2000);
     inputPassword.classList.add("error");
-    password.textContent = "mauvais password";
-    setTimeout(reinitialise, 3000);
+    alertClass.textContent = "Mot de pass requis";
+    setTimeout(() => {
+      alertClass.textContent = "";
+    }, 1500);
   } else if (!emailRegex.test(inputEmail.value)) {
     inputEmail.classList.add("error");
-    inputEmail.value = "Casse non respectée";
-    setTimeout(reinitialise, 3000);
+    inputEmail.value = "Adresse Email Invalide";
+    setTimeout(() => {
+      inputEmail.value = "";
+    }, 2000);
   } else if (inputPassword.value === "") {
     inputPassword.classList.add("error");
-    password.textContent = "mauvais password";
+    alertClass.textContent = "Mot de pass requis";
+    setTimeout(() => {
+      alertClass.textContent = "";
+    }, 1500);
+  } else if (emailRegex.test(inputEmail.value) && inputPassword.value !== "") {
+    alert("Connexion en cours !!!!");
   }
+  //   console.log(inputEmail.value);
 });
-function reinitialise() {
-  inputEmail.innerText = "Chuck@norris.com";
-}
